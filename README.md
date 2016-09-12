@@ -1,3 +1,5 @@
-https://github.com/cran/Ckmeans.1d.dp/blob/master/src/Ckmeans.1d.dp.cpp
-https://github.com/simple-statistics/simple-statistics/blob/master/src/ckmeans.js
-https://github.com/llimllib/ckmeans/blob/master/ckmeans.py
+Ckmeans.1d.dp is a dynamic programming algorithm for globally-optimal clustering
+of one-dimensional vectors. Its reference implementation is in C++, wrapped in
+an [R package](https://cran.r-project.org/web/packages/Ckmeans.1d.dp). This
+module is a Cython wrapper around the C++ code inside that package.
+

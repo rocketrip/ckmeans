@@ -1,7 +1,6 @@
 *.egg-info
 __pycache__
-
-tests/ckmeans/ckmeans_reference.py
-tests/ckeams/find-k_benchmark_test.py
-find-k_benchmark.py
-find-k_benchmark.pyp.lprof
+.cache
+build
+ckmeans/*.c*
+**/*.cpython*
