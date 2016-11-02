@@ -8,4 +8,4 @@ module is a Cython wrapper around the C++ code inside that package.
 NOTE: this will fail to build using the default compiler (Clang) on OS X El
 Capitan. I have not tested it with newer versions of Clang. It will build
 successfully with GCC 6 as installed by Homebrew. If you have build problems,
-try specifying a different compiler with the `CXX` environment variable.
+try specifying a different compiler with the `CC` environment variable.
