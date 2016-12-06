@@ -1,0 +1,163 @@
+NEWS
+
+Version 3.4.6-4
+  Changes
+  2016-10-21
+  1. Added an equal bin width histogram example to contrast with ahist()
+  function.
+
+  2016-10-16
+  1. Moved ahist() function from visualize.R to a new R file ahist.R.
+
+  2016-10-15
+  1. Added a breaks argument to ahist() so as use default graphics::hist() but
+     with the capacity to add sticks to the histogram generated.
+  2. Added a skip.empty.bin.color argument to ahist() to gain more control over
+     colors of the histogram bars.
+
+  2016-10-12
+  1. Added a data argument to ahist() to provide raw data for visualization.
+  2. Allow x to ahist() to be an object of the class "Ckmeans.1d.dp" to avoid
+     recomputing the clustering if it has already been done. This requires the
+     data for clustering to be provided via the data argument.
+
+  2016-10-11
+  1. Added an argument add.sticks=TRUE to ahist() to turn on or off the sticks
+  just above the horizontal axis.
+  2. Added an argument style to ahist() for different styles of adaptive
+  histogram.
+
+Version 3.4.6-3
+  Changes
+  2016-10-03
+  1. Updated examples in Ckmeans.1d.dp() manual
+
+  Changes
+  2016-10-01
+  1. Added a new function plot() to visualize the clusters.
+
+  2016-09-30
+  1. Updated examples of ahist().
+  2. Added sticks to ahist() to show the original input data.
+
+  2016-09-27
+  1. Fixed ahist() when there is only a single bin detected.
+  2. Made ahist() run much faster than the previous version.
+  3. Updated previous examples and added more examples to illustrate
+     the use of ahist() better.
+
+Version 3.4.6-2
+  Changes
+  2016-09-25
+  1. Introduced a new function ahist() to generate adaptive histograms
+     corresponding to the optimal univariate k-means clustering.
+
+Version 3.4.6-1
+  Changes
+  2016-08-28
+  1. Removed usage of lambda functions in C++ code for compatibility with
+     older versions of C++ compilers.
+  2. Shifted the values of x by median to improve numerical stability.
+
+Version 3.4.6
+  Changes
+  2016-05-25
+  1. Implemented an O(kn lg n) algorithm, speeding up the program greatly.
+
+Version 3.4.5
+  Changes
+  2016-05-22
+  1. s[j,i] is now computed in constant time now based on pre-computed
+     sums of input x and its squares from 0 to i.
+
+Version 3.4.4
+  Changes
+  2016-05-22
+  1. Incorporated a numerically stable method for computing sample variance when
+     selecting the number of clusters.
+  2. Improved documentation.
+  3. Removed a typo in describing time complexity.
+
+  2016-05-18
+  1. Now Ckmeans.1d.dp() function returns "totss", "tot.withinss", and
+     "betweenss" statistics to summarize the optimal clustering obtained
+  2. print.Ckmeans.1d.dp() print out the above statistics
+
+Version 3.4.3
+  Changes
+  2016-05-15
+  1. Upgraded to support c++11.
+  2. Introduced optimal k-means clustering for weighted data.
+
+Version 3.4.2
+  Changes
+  2016-05-14
+  1. Implemented backward filling of the dynamic programming matrix to
+     utlize lower bounds for the optimal cluster boundary. This step
+     substantially reduced the runtime by half (two or more times faster).
+
+  2016-05-07
+  1. Implemented mathematically proven tighter ranges when searching for
+     cluster boundaries. The runtime of the function is greatly reduced.
+     Most notably, the runtime is roughly constant when number of clusters
+     increases after k=2.
+  2. Integrated all test cases into one single file.
+
+Version 3.4.0
+  Changes
+  2016-05-07
+  1. Substantial runtime reduction. Added code to check for an upper bound
+     for the sum of within cluster square distances. This reduced the runtime
+     by half when clustering 100000 points (from standard normal distribution)
+     into 10 clusters.
+  2. Eliminated the unnecessary calculation of (n-1) elements in the dynamic
+     programming matrix that are not needed for the final result. This
+     resulted in enormous reduction in run time when the number of cluster
+     is 2: assigning one million points into two clusters took half a
+     a second on iMac with 2.93 GHz Intel Core i7 processor.
+  3. Included a reference to the first description of the dynamic programming
+     solution by Richard Bellman (1973).
+
+Version 3.3.3
+  Changes
+  2016-05-03
+  1. Fixed a bug on cluster assignment when there is only one cluster. This
+     was a bug introduced in version 3.3.2.
+
+Version 3.3.2
+  Changes
+  2016-05-03
+  1. Added automatic test cases.
+  2. Removed an incorrect warning message when the number of clusters is equal
+     to the number of unique elements in the input vector.
+  3. Changed from 1-based to 0-based C implementation.
+  4. Optimized the code by reducing overhead. See 22% reduction in runtime to
+     repeatedly cluster seven points into two clusters one million times.
+
+Version 3.3.1 2015-02-10
+  Changes
+  1. Fixed a problem that prevented Windows compilation (now forced the size_t
+     type to unsigned long in max() function.
+
+Version 3.3.0 2015-02-09
+  Changes
+  1. Added automated test cases into the package.
+  2. Changed the code to not issue a warning message when the number of clusters
+     is estimated to be 1.
+  3. When lower bound of the number of clusters is greater than the unique
+     number of elements in the input vector, both the min and max numbers of
+     clusters are set to the number of unique number of input values.
+  4. When the upper bound of the number of clusters is greater than the unique
+     number of elements in the input vector, the max number of clusters is set
+     to the number of unique elements in the input vector.
+  5. Use warning() instead of cat() to display warning messages.
+  6. Incorporate changes suggested by a user to speed up the code.
+  7. Revised the examples and documentation to improve usability of the package
+     in general.
+  8. Started the NEWS file.
+
+Version 3.02 2014-03-24 and earlier
+  Changes
+  1. The program now automatically determines the number of clusters from a
+     given range.
+  2. The program is optimized further speedup.
