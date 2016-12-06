@@ -28,7 +28,7 @@ wrapper = Extension(
 
 setup(
     name='ckmeans',
-    version='1.0.1-a',
+    version='1.1.0',
     description='Python wrapper around Ckmeans.1d.dp',
     long_description=long_description,
     author='Greg Werbin',
