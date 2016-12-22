@@ -1,6 +1,4 @@
-
-
-cdef extern from "../src/Ckmeans.1d.dp_main.cpp":
+cdef extern from "../Ckmeans.1d.dp/src/Ckmeans.1d.dp_main.cpp":
     # void Ckmeans_1d_dp(vector[double] x, int n,
     #                    vector[double] weights, int n_weights,
     #                    int min_k, int max_k,
