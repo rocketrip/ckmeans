@@ -46,4 +46,6 @@ def ckmeans(np.ndarray[np.float64_t] x,
 
     between_ss = total_ss - within_ss.sum()
 
-    return KmeansResult(clustering, k, centers, sizes, within_ss, total_ss, between_ss)
+    # change the clustering back to 0-indexed,
+    # since the R wrapper changes it to 1-indexed.
+    return KmeansResult(clustering - 1, k, centers, sizes, within_ss, total_ss, between_ss)
