@@ -11,7 +11,7 @@ successfully with GCC 6 as installed by Homebrew. If you have build problems,
 try specifying a different compiler with the `CC` environment variable.
 
 The Ckmeans.1d.dp source tree is version 3.4.6-5, as downloaded from the [CRAN 
-archive](https://cran.r-project.org/src/contrib/Archive/Ckmeans.1d.dp/Ckmeans.1d.dp_3.4.6-4.tar.gz). 
+archive](https://cran.r-project.org/src/contrib/Ckmeans.1d.dp_3.4.6-5.tar.gz). 
 It is licensed under the LGPLv3. Only the necessary files from the Ckmeans tree are 
 included here, and unnecessary files have been removed -- no changes are made 
 to the code.
