@@ -21,7 +21,7 @@ def ckmeans(x, k=(1,10), weights=None):
     -------
     KmeansResult
     """
-    x = np.array(x, dtype = np.double, order = 'C', ndmin=1)
+    x = np.array(x, dtype=np.double, order='C', ndmin=1)
 
     try:
         min_k, max_k = k
@@ -33,8 +33,9 @@ def ckmeans(x, k=(1,10), weights=None):
     if max_k > len(set(x)):
         raise ValueError("k cannot be greater than the number of unique data points")
 
-    if not weights:
-        weights = np.array([1.0], dtype = np.double)
+    if weights is None:
+        weights = np.array([1.0], dtype=np.double)
+    elif not isinstance(weights, np.ndarray):
+        raise TypeError('weights needs to be a numpy array')
 
     return _ckmeans_wrapper.ckmeans(x, min_k, max_k, weights)
-
